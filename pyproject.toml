@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cellmot"
+version = "1.0.0"
+description = "Cell tracking in 3D+time light-sheet microscopy: data streaming, official metric, score-aligned loss (Kaggle Biohub competition)"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Julian Camilo Villa Duque" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "zarr>=3.0",
+    "polars>=1.0",
+    "tracksdata",
+]
+
+[project.optional-dependencies]
+model = ["torch>=2.2"]
+dev = ["pytest>=8", "ruff>=0.5", "torch>=2.2"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["src/cellmot/official"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E402", "E501", "E701", "E702", "E731", "E741"]

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 212" width="700" height="212" role="img" aria-label="Top: a complete lineage with its division. Bottom: a cell missed at t+2 breaks the chain and takes the following edges with it.">
+<title>Top: a complete lineage with its division. Bottom: a cell missed at t+2 breaks the chain and takes the following edges with it.</title>
+<style>
+  text { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .ink { fill: #1A2427 } .s-ink { stroke: #1A2427 }
+  .mut { fill: #61757C } .s-mut { stroke: #61757C }
+  .zlejos { fill: #2E3A8C } .s-zlejos { stroke: #2E3A8C }
+  .zmedio { fill: #1B8FA3 } .s-zmedio { stroke: #1B8FA3 }
+  .zcerca { fill: #B8801B } .s-zcerca { stroke: #B8801B }
+  .anotada { fill: #C42A5B } .s-anotada { stroke: #C42A5B }
+  .aviso { fill: #B4531B } .s-aviso { stroke: #B4531B }
+  .caja { fill: #1A2427; opacity: .06 }
+  @media (prefers-color-scheme: dark) {
+    .ink { fill: #E4EDEF } .s-ink { stroke: #E4EDEF }
+    .mut { fill: #8B9EA5 } .s-mut { stroke: #8B9EA5 }
+    .zlejos { fill: #6D7CE4 } .s-zlejos { stroke: #6D7CE4 }
+    .zmedio { fill: #35B7CC } .s-zmedio { stroke: #35B7CC }
+    .zcerca { fill: #F0BB4D } .s-zcerca { stroke: #F0BB4D }
+    .anotada { fill: #FF5C87 } .s-anotada { stroke: #FF5C87 }
+    .aviso { fill: #E8935A } .s-aviso { stroke: #E8935A }
+    .caja { fill: #E4EDEF; opacity: .08 }
+  }
+</style>
+<g class="s-mut" opacity=".4" stroke-width="1"><path d="M40 186 H660"/></g>
+<text x="80" y="202" text-anchor="middle" class="mut" font-size="11">t</text>
+<text x="200" y="202" text-anchor="middle" class="mut" font-size="11">t+1</text>
+<text x="320" y="202" text-anchor="middle" class="mut" font-size="11">t+2</text>
+<text x="440" y="202" text-anchor="middle" class="mut" font-size="11">t+3</text>
+<text x="560" y="202" text-anchor="middle" class="mut" font-size="11">t+4</text>
+<g class="s-zmedio" stroke-width="2.5" fill="none"><path d="M80 60 L200 52 L320 58"/><path d="M320 58 L440 34 M320 58 L440 82"/><path d="M440 34 L560 28 M440 82 L560 90"/></g>
+<circle cx="80" cy="60" r="7" class="zmedio"/>
+<circle cx="200" cy="52" r="7" class="zmedio"/>
+<circle cx="320" cy="58" r="7" class="zmedio"/>
+<circle cx="440" cy="34" r="7" class="zmedio"/>
+<circle cx="440" cy="82" r="7" class="zmedio"/>
+<circle cx="560" cy="28" r="7" class="zmedio"/>
+<circle cx="560" cy="90" r="7" class="zmedio"/>
+<text x="320" y="32" text-anchor="middle" class="ink" font-size="11">division 1 to 2</text>
+<g class="s-zcerca" stroke-width="2.5" fill="none"><path d="M80 140 L200 145"/></g>
+<g class="s-anotada" stroke-width="2.5" fill="none" stroke-dasharray="5 5"><path d="M200 145 L320 138"/></g>
+<g class="s-mut" stroke-width="2.5" fill="none" opacity=".4" stroke-dasharray="3 6"><path d="M320 138 L440 150 L560 146"/></g>
+<circle cx="80" cy="140" r="7" class="zcerca"/>
+<circle cx="200" cy="145" r="7" class="zcerca"/>
+<circle cx="320" cy="138" r="7" fill="none" class="s-anotada" stroke-width="2" stroke-dasharray="3 3"/>
+<circle cx="440" cy="150" r="7" class="mut" opacity=".45"/>
+<circle cx="560" cy="146" r="7" class="mut" opacity=".45"/>
+<text x="320" y="118" text-anchor="middle" class="anotada" font-size="11">missed node</text>
+<text x="505" y="174" text-anchor="middle" class="mut" font-size="11">and everything after it is lost</text>
+</svg>

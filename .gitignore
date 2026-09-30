@@ -1,0 +1,26 @@
+# secrets
+.env
+.env.*
+!.env.example
+kaggle.json
+# competition data and derived artifacts (never publish)
+*.zip
+train/
+test/
+data/
+*.csv
+*.npz
+*.npy
+# model weights
+*.pt
+*.pth
+*.pkl
+*.ckpt
+# kernel outputs
+out/
+build/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/

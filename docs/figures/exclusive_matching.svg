@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 258" width="700" height="258" role="img" aria-label="Matching is one-to-one: an interpolated node moved closer to the annotated cell steals the match from the real detection and exposes its own wrong edges.">
+<title>Matching is one-to-one: an interpolated node moved closer to the annotated cell steals the match from the real detection and exposes its own wrong edges.</title>
+<style>
+  text { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .ink { fill: #1A2427 } .s-ink { stroke: #1A2427 }
+  .mut { fill: #61757C } .s-mut { stroke: #61757C }
+  .zlejos { fill: #2E3A8C } .s-zlejos { stroke: #2E3A8C }
+  .zmedio { fill: #1B8FA3 } .s-zmedio { stroke: #1B8FA3 }
+  .zcerca { fill: #B8801B } .s-zcerca { stroke: #B8801B }
+  .anotada { fill: #C42A5B } .s-anotada { stroke: #C42A5B }
+  .aviso { fill: #B4531B } .s-aviso { stroke: #B4531B }
+  .caja { fill: #1A2427; opacity: .06 }
+  @media (prefers-color-scheme: dark) {
+    .ink { fill: #E4EDEF } .s-ink { stroke: #E4EDEF }
+    .mut { fill: #8B9EA5 } .s-mut { stroke: #8B9EA5 }
+    .zlejos { fill: #6D7CE4 } .s-zlejos { stroke: #6D7CE4 }
+    .zmedio { fill: #35B7CC } .s-zmedio { stroke: #35B7CC }
+    .zcerca { fill: #F0BB4D } .s-zcerca { stroke: #F0BB4D }
+    .anotada { fill: #FF5C87 } .s-anotada { stroke: #FF5C87 }
+    .aviso { fill: #E8935A } .s-aviso { stroke: #E8935A }
+    .caja { fill: #E4EDEF; opacity: .08 }
+  }
+</style>
+<text x="4" y="14" class="mut" font-size="11">before</text>
+<g transform="translate(24,34)">
+<circle cx="130" cy="90" r="72" class="anotada" opacity=".08"/>
+<circle cx="130" cy="90" r="72" class="s-anotada" fill="none" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="130" y="178" text-anchor="middle" class="anotada" font-size="11">7 um gate</text>
+<circle cx="130" cy="90" r="9" class="anotada"/>
+<text x="130" y="70" text-anchor="middle" class="ink" font-size="11">annotated cell</text>
+<g class="s-zmedio" stroke-width="2.5" fill="none"><path d="M62 100 L124 92 L196 84"/></g>
+<circle cx="62" cy="100" r="6" class="zmedio"/>
+<circle cx="124" cy="92" r="6" class="zmedio"/>
+<circle cx="196" cy="84" r="6" class="zmedio"/>
+<text x="200" y="70" class="zmedio" font-size="11" font-weight="600">real detection: MATCHES</text>
+<g class="s-mut" stroke-width="2.5" fill="none" opacity=".32"><path d="M40 156 L120 150 L200 158"/></g>
+<circle cx="40" cy="156" r="6" class="mut" opacity=".38"/>
+<circle cx="120" cy="150" r="6" class="mut" opacity=".38"/>
+<circle cx="200" cy="158" r="6" class="mut" opacity=".38"/>
+<text x="120" y="200" text-anchor="middle" class="mut" font-size="11">interpolated node: invisible, FREE</text>
+</g>
+<text x="374" y="14" class="mut" font-size="11">after "moving it closer"</text>
+<g transform="translate(394,34)">
+<circle cx="130" cy="90" r="72" class="anotada" opacity=".08"/>
+<circle cx="130" cy="90" r="72" class="s-anotada" fill="none" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="130" cy="90" r="9" class="anotada"/>
+<g class="s-aviso" stroke-width="2.5" fill="none"><path d="M50 132 L136 96 L206 140"/></g>
+<circle cx="50" cy="132" r="6" class="aviso"/>
+<circle cx="136" cy="96" r="6" class="aviso"/>
+<circle cx="206" cy="140" r="6" class="aviso"/>
+<text x="130" y="196" text-anchor="middle" class="aviso" font-size="11" font-weight="600">now it MATCHES: its edges become visible</text>
+<text x="130" y="212" text-anchor="middle" class="aviso" font-size="11">and they belong to another track: false positives</text>
+<g class="s-zmedio" stroke-width="2.5" fill="none" opacity=".32" stroke-dasharray="4 4"><path d="M62 100 L124 92 L196 84"/></g>
+<circle cx="62" cy="100" r="6" class="zmedio" opacity=".32"/>
+<circle cx="124" cy="92" r="6" class="zmedio" opacity=".32"/>
+<circle cx="196" cy="84" r="6" class="zmedio" opacity=".32"/>
+<text x="200" y="70" class="zmedio" font-size="11" opacity=".8">real: DISPLACED</text>
+</g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 710 215" width="710" height="215" role="img" aria-label="The voxel is 1.625 um in Z and 0.40625 um in XY: four times thicker in depth than in plane.">
+<title>The voxel is 1.625 um in Z and 0.40625 um in XY: four times thicker in depth than in plane.</title>
+<style>
+  text { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .ink { fill: #1A2427 } .s-ink { stroke: #1A2427 }
+  .mut { fill: #61757C } .s-mut { stroke: #61757C }
+  .zlejos { fill: #2E3A8C } .s-zlejos { stroke: #2E3A8C }
+  .zmedio { fill: #1B8FA3 } .s-zmedio { stroke: #1B8FA3 }
+  .zcerca { fill: #B8801B } .s-zcerca { stroke: #B8801B }
+  .anotada { fill: #C42A5B } .s-anotada { stroke: #C42A5B }
+  .aviso { fill: #B4531B } .s-aviso { stroke: #B4531B }
+  .caja { fill: #1A2427; opacity: .06 }
+  @media (prefers-color-scheme: dark) {
+    .ink { fill: #E4EDEF } .s-ink { stroke: #E4EDEF }
+    .mut { fill: #8B9EA5 } .s-mut { stroke: #8B9EA5 }
+    .zlejos { fill: #6D7CE4 } .s-zlejos { stroke: #6D7CE4 }
+    .zmedio { fill: #35B7CC } .s-zmedio { stroke: #35B7CC }
+    .zcerca { fill: #F0BB4D } .s-zcerca { stroke: #F0BB4D }
+    .anotada { fill: #FF5C87 } .s-anotada { stroke: #FF5C87 }
+    .aviso { fill: #E8935A } .s-aviso { stroke: #E8935A }
+    .caja { fill: #E4EDEF; opacity: .08 }
+  }
+</style>
+<text x="0" y="14" class="mut" font-size="11">real voxel grid, to scale</text>
+<g transform="translate(4,32)">
+<g class="s-mut" stroke-width="1" opacity=".35" fill="none"><path d="M0 0 H240 M0 40 H240 M0 80 H240 M0 120 H240 M0 160 H240 M0 0 V160 M10 0 V160 M20 0 V160 M30 0 V160 M40 0 V160 M50 0 V160 M60 0 V160 M70 0 V160 M80 0 V160 M90 0 V160 M100 0 V160 M110 0 V160 M120 0 V160 M130 0 V160 M140 0 V160 M150 0 V160 M160 0 V160 M170 0 V160 M180 0 V160 M190 0 V160 M200 0 V160 M210 0 V160 M220 0 V160 M230 0 V160 M240 0 V160"/></g>
+<rect x="0" y="0" width="10" height="40" class="zmedio" opacity=".55"/>
+<circle cx="120" cy="80" r="61.5" class="zcerca" opacity=".20"/>
+<circle cx="120" cy="80" r="61.5" class="s-zcerca" fill="none" stroke-width="1.5"/>
+<text x="120" y="84" text-anchor="middle" class="ink" font-size="11">cell ~5 um</text>
+<g class="s-ink" stroke-width="1"><path d="M-14 0 V40 M-18 0 H-10 M-18 40 H-10"/></g>
+<text x="-22" y="24" text-anchor="end" class="ink" font-size="11">1.625 um (Z)</text>
+<g class="s-ink" stroke-width="1"><path d="M0 174 H10 M0 170 V178 M10 170 V178"/></g>
+<text x="16" y="178" class="ink" font-size="11">0.40625 um (X, Y)</text>
+</g>
+<g transform="translate(340,32)">
+<text x="0" y="-14" class="mut" font-size="11">measured consequence</text>
+<rect x="0" y="0" width="356" height="50" class="zlejos" opacity=".13"/>
+<text x="12" y="21" class="ink" font-size="12" font-weight="600">in Z: ~3 voxels cover a whole cell</text>
+<text x="12" y="39" class="mut" font-size="12">the centre can only fall in 3 places</text>
+<rect x="0" y="62" width="356" height="50" class="zcerca" opacity=".16"/>
+<text x="12" y="83" class="ink" font-size="12" font-weight="600">in XY: ~12 voxels cover the same cell</text>
+<text x="12" y="101" class="mut" font-size="12">the centre is located 4x more finely</text>
+<rect x="0" y="124" width="356" height="34" class="s-anotada" fill="none" stroke-width="1.5"/>
+<text x="12" y="146" class="anotada" font-size="12" font-weight="600">a cubic window in voxels is 4x longer in Z</text>
+</g>
+</svg>
