@@ -58,7 +58,7 @@ The public score ranked these the other way round. Choosing the final submission
 | `kaggle/build_validator_kernel.py` | runs the public notebook's own validator on chosen training crops and dumps raw graphs |
 | `bench/` | the *faithful bench*: re-runs the notebook's graph repair on those raw graphs with any constant changed |
 | `tests/` | metric, IO and loss tests on synthetic data (no competition data needed) |
-| `docs/WRITEUP.md` | the full story: what worked, what did not, and why |
+| `docs/WRITEUP.md` | the full story: what worked, what did not, why, and what was missing compared with the 3rd-place solution |
 
 The public notebook and the organizer's model code are third-party and are **not** redistributed here; the builders
 take them as inputs. Competition data and model weights are not included.

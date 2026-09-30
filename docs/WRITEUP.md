@@ -85,3 +85,29 @@ Three findings:
 - Destroy-the-piece test: before crediting a component, remove it and check the output changes. This caught an edge
   head that had been inert at inference for weeks.
 - GPU budget discipline: 10 h/week cap, fp16 (2.35×), one process per T4, fail-fast checks at kernel start.
+
+## 8. What was missing: comparison with the 3rd-place solution
+
+The 3rd-place team (yu4u and ren4yu, *Cell Tracking with 2.5D/3D Ensembles and Lineage Graph Optimization*) scored
+**0.967 private**, 0.052 above this solution. Their published ablation makes the gap easy to locate, and it is worth
+stating plainly what I did not get to.
+
+| piece | 3rd place | this solution | approximate value |
+|---|---|---|---|
+| **Divisions chosen jointly with links** | a parent model sees t−1, t, t+1 (raw and motion-aligned) plus "before" and "after" models; division events enter the optimizer together with ordinary links, so a daughter cannot be taken by another track | divisions added after linking by hand-tuned rules (division Jaccard ~0.06–0.18) | their division Jaccard is 0.47–0.54, worth ~+0.05 of score: most of the gap |
+| **Calibration for sparse annotation** | two probabilities per candidate: *a* = will the metric evaluate it, *q* = is it correct given that it is evaluated; expected TP = a·q, expected FP = a·(1−q) | I concluded that sparse annotation cannot teach which detections are noise and closed the line | this is what unlocks the joint optimizer |
+| **Optimizer objective = the metric** | surrogate of the score (expected TP, FP and node count), linearized and re-solved for up to 3 rounds (HiGHS LP/MILP) | ILP with fixed costs; node count decided by pruning constants | part of their +0.063 at the joint-optimization step |
+| **Own detector** | 2.5D U-Nets with pretrained EfficientNetV2-L / B7 encoders + 3D SegResNet, 5 folds; ignore regions built from low-threshold DoG candidates | the organizer's small U-Net. I had diagnosed the same failure (an ignore mask built from classical peaks trains unannotated cells as background) but did not finish the retraining | detection + plain Hungarian already gives them 0.890 CV |
+| **Learned dense flow** | 3D displacement field feeding matching and aligning images for the division model | hand-tuned motion relinking | +0.012 in their ablation |
+| **Coordinate refinement** | per-frame affine motion fit, graph fixed | public notebook's line smoothing | +0.007 in their ablation |
+
+**The root difference is the instrument.** They built every stage themselves and validated with 5-fold out-of-fold
+predictions on all 199 videos: CV 0.978 → public 0.977 → private 0.967, so their offline score transferred. Mine was built
+on top of a public pipeline whose second model seed had seen every training video, so no clean validation of the full
+pipeline existed. That is why so much effort went into tuning constants around third-party components that the bench
+could not judge (section 6), instead of building owned components that could be validated.
+
+Three of their key ideas appear in my log as diagnosed but unfinished: daughters being "stolen" by other tracks before
+the division stage, the node-count term belonging in the objective, and the detector's ignore mask. The lesson I take:
+when the diagnosis points at the structure of the decision (what is chosen jointly, and against which objective), fix the
+structure first, and own the validation before tuning anything.
